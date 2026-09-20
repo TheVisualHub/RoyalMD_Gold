@@ -1,12 +1,26 @@
 # 👑 Welcome to the RoyalMD — Gold Edition
-✨ Immobilize any protein on a metal surface and run it — with a single command.
+✨ Click on the image to watch the video in 4K: 
+[![Watch the video](https://img.youtube.com/vi/fwk0BlfbTHc/maxresdefault.jpg)](https://www.youtube.com/watch?v=fwk0BlfbTHc)
 
 ## 🧬 QUICK LAUNCH
 ```bash
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+       --interface-root ./INTERFACE_FF_1_5
 ```
-That one flag is enough. Everything else — the slab size, the box vectors, the
-restraints, the barostat — is derived for you.
+This builds an **Au{111}** surface, places the protein on it, and runs the whole system with the
+metal **harmonically restrained** through minimization, heating and production — following the
+official AMBER tutorial:
+[Setting Up A Protein System at the FCC Metal Surface](https://ambermd.org/tutorials/advanced/tutorial27/pro_metal.php).
+
+The metal itself is described by the **INTERFACE force field**
+([INTERFACE-MD, v1.5](https://bionanostructures.com/interface-md/) · [Heinz *et al.*, *J. Phys.
+Chem. C* **2008**, *112*, 17281](https://doi.org/10.1021/jp801931d)) — neutral fcc metals with
+12-6 Lennard-Jones parameters. Grab it once and point `--interface-root` at it:
+
+```bash
+curl -O https://bionanostructures.com/wp-content/uploads/2016/02/interface_ff_1_5.zip
+unzip interface_ff_1_5.zip
+```
 
 ## 🔭 Overview
 **RoyalMD Gold Edition** is a lightweight, educational molecular dynamics pipeline built on
@@ -18,13 +32,11 @@ production runs, with a single command-line interface. The metal surface follows
 built natively in OpenMM and runs solvated instead of in vacuo. It automatically detects your
 hardware and uses GPU if available.
 
-This portfolio build simulates the **macromolecule only** — small molecules are stripped, not
-parametrized.
-
 ## 👤 Author
 
-Original idea & developmen: **Gleb Novikov**
-Code test & support: **Claude Opus 5**
+Original code & test: **Gleb Novikov**
+
+Technical support: **Claude Opus**
 
 
 ## ✨ Features
@@ -123,7 +135,7 @@ Every parameter is a command-line flag — nothing needs editing inside the scri
 --strip-residues    SO4 HOH EDO GOL LIG LIH   # this build simulates the macromolecule only
 ```
 
-## 🏅 Metal surface options
+## 🏆 Metal surface options
 
 ```bash
 --metalsurf                        # master switch: build the slab and immobilize the solute
@@ -225,15 +237,15 @@ moving the surface away from the spacing the INTERFACE parameters are defined fo
     }
 ```
 
-## 🧪 Test system
+## 🔮 Test system
 
 ```bash
 ./test_systems/xylanase.pdb
 ```
-A compact, rigid, well-behaved glycoside hydrolase — small enough to equilibrate in minutes on
-a laptop GPU, and a realistic candidate for enzyme immobilization on gold.
+A compact and elegant glycoside hydrolase — a small enought to equilibrate in minutes on
+a laptop GPU, and a realistic candidate for enzyme immobilization on gold surface.
 
-## 📦 Output
+## 🔮 Output
 
 ```
 MD_<name>_<ddmmyy>/
