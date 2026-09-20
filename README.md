@@ -23,7 +23,8 @@ parametrized.
 
 ## 👤 Author
 
-This script was developed and benchmarked by **Gleb Novikov**
+Original idea & developmen: **Gleb Novikov**
+Code test & support: **Claude Opus 5**
 
 
 ## ✨ Features
