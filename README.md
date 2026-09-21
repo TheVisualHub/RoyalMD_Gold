@@ -4,7 +4,7 @@
 
 ## 🧬 QUICK LAUNCH
 ```bash
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ./INTERFACE_FF_1_5
 ```
 This builds an **Au{111}** surface, places the protein on it, and runs the whole system with the
@@ -78,27 +78,27 @@ Only `INTERFACE_FF_1_5/MODEL_DATABASE/METALS/` is needed. If it lives elsewhere,
 ## ⚜️ Usage Examples
 
 ```bash
-# Xylanase on gold {111} — defaults, the whole slab restrained:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf
+# Carbonic anhydrase II on gold {111} — defaults, the whole slab restrained:
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf
 
 # Let the top 2 metal layers breathe from NPT onwards (recommended):
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal-relax-top 2
 
 # Silver instead of gold, {100} facet, thicker slab:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal ag --metal-facet 100 --metal-cells-z 3
 
 # Platinum, closer start, 50 ns production:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal pt --metal-separation 2.5 --production-time 50000
 
 # INTERFACE package somewhere else:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb --metalsurf \
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ~/software/INTERFACE_FF_1_5
 
 # NO metal at all — plain protein MD in a dodecahedron:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/xylanase.pdb
+python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb
 ```
 
 ## ⚙️ Configuration
@@ -237,13 +237,42 @@ moving the surface away from the spacing the INTERFACE parameters are defined fo
     }
 ```
 
-## 🔮 Test system
+## ✨ Test system
 
 ```bash
-./test_systems/xylanase.pdb
+./test_systems/CarbonicAnhydraseII.pdb
 ```
-A compact and elegant glycoside hydrolase — a small enought to equilibrate in minutes on
-a laptop GPU, and a realistic candidate for enzyme immobilization on gold surface.
+**Human carbonic anhydrase II** (PDB **[3KS3](https://www.rcsb.org/structure/3KS3)**, X-ray at
+**0.90 Å** — one of the highest-resolution protein structures available). A single 257-residue
+chain dominated by a large, twisted **antiparallel β-sheet** that packs into a rigid, compact
+fold, with only short helices around the edges.
+
+### ⚡ The Zn²⁺ active site
+
+The catalytic zinc sits at the bottom of a **~15 Å deep conical cleft** that opens to solvent,
+held by three histidines:
+
+```
+LINK   NE2 HIS  94  --- ZN 262      (2.03 A)
+LINK   NE2 HIS  96  --- ZN 262      (2.04 A)
+LINK   ND1 HIS 119  --- ZN 262      (2.02 A)
+```
+
+The fourth coordination site holds a water/hydroxide — the catalytic nucleophile that attacks
+CO₂, giving one of the fastest turnover numbers in biology (~10⁶ s⁻¹).
+
+Two consequences for surface modeling:
+
+- **Orientation is everything.** Land the funnel face-down on the metal and the enzyme is dead;
+  face-up and it stays accessible. This is exactly what the principal-axis + pocket-detection
+  alignment is for, and it makes this a real test of the pipeline rather than a trivial one.
+- **The zinc is non-bonded here.** `amber14` treats Zn²⁺ as a simple charged LJ sphere — the
+  three His–Zn bonds are *not* bonded terms, so the coordination is maintained only
+  electrostatically. Fine on a 10 ns timescale; for long production runs check the His–Zn
+  distances, or move to a bonded/ZAFF zinc model.
+
+> The structure also contains one **glycerol** (cryoprotectant) and 481 crystallographic waters.
+> For the tutorial, both are removed by the default `--strip-residues`.
 
 ## 🔮 Output
 
