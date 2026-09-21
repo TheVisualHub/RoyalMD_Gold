@@ -1,6 +1,6 @@
-# 👑 Welcome to the RoyalMD — Gold Edition
-✨ Click on the image to watch the video in 4K: 
-[![Watch the video](https://img.youtube.com/vi/fwk0BlfbTHc/maxresdefault.jpg)](https://www.youtube.com/watch?v=fwk0BlfbTHc)
+# 👑 Welcome to the RoyalMD Gold Edition
+✨ Click on the image to watch the video in 4K:<br>
+<a href="https://youtu.be/3tgJmtr9DHs"><img src="https://img.youtube.com/vi/3tgJmtr9DHs/maxresdefault.jpg" alt="Watch the video" width="800"></a>
 
 ## 🧬 QUICK LAUNCH
 ```bash
