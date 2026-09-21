@@ -23,7 +23,7 @@ unzip interface_ff_1_5.zip
 ```
 
 ## 🔭 Overview
-**RoyalMD Gold Edition** is a lightweight, educational molecular dynamics pipeline built on
+**RoyalMD Gold Edition** is a lightweight molecular dynamics pipeline built on
 **OpenMM**, designed to run **protein–metal interface** simulations on portable hardware. It
 automates on the fly every step of surface modeling: from PDB fixing to building an fcc metal
 slab, aligning the protein above it, solvation, minimization, multi-step equilibration and
