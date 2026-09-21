@@ -2,9 +2,9 @@
 ✨ Click on the image to watch the video in 4K:<br>
 <a href="https://youtu.be/3tgJmtr9DHs"><img src="https://img.youtube.com/vi/3tgJmtr9DHs/maxresdefault.jpg" alt="Watch the video" width="800"></a>
 
-## 🧬 QUICK LAUNCH
+## 💫 QUICK LAUNCH
 ```bash
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ./INTERFACE_FF_1_5
 ```
 This builds an **Au{111}** surface, places the protein on it, and runs the whole system with the
@@ -79,26 +79,26 @@ Only `INTERFACE_FF_1_5/MODEL_DATABASE/METALS/` is needed. If it lives elsewhere,
 
 ```bash
 # Carbonic anhydrase II on gold {111} — defaults, the whole slab restrained:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf
 
 # Let the top 2 metal layers breathe from NPT onwards (recommended):
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal-relax-top 2
 
 # Silver instead of gold, {100} facet, thicker slab:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal ag --metal-facet 100 --metal-cells-z 3
 
 # Platinum, closer start, 50 ns production:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal pt --metal-separation 2.5 --production-time 50000
 
 # INTERFACE package somewhere else:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ~/software/INTERFACE_FF_1_5
 
 # NO metal at all — plain protein MD in a dodecahedron:
-python ./RoyalMD_GoldEdition_Portfolio.py ./test_systems/CarbonicAnhydraseII.pdb
+python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb
 ```
 
 ## ⚙️ Configuration
