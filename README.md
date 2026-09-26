@@ -286,3 +286,11 @@ MD_<name>_<ddmmyy>/
 ├── production.nc       # production trajectory
 └── metal_param/        # generated unit cell, slab PDB and metal force field XML
 ```
+
+## 📜 License
+
+The code in this repository is released under the **MIT License** — see [LICENSE](LICENSE).
+Copyright © TheVisualHub.
+
+The INTERFACE force field v1.5 is not included in this repository. 
+It is distributed under its own terms.
