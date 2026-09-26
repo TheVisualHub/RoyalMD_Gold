@@ -203,9 +203,9 @@ straight from the package and converted to OpenMM units:
 | Pd | 6.15 | 1.4095 |
 | Pt | 7.80 | 1.4225 |
 
-Because a 12-6 LJ has the same functional form in CHARMM and AMBER, and both use
+Since a 12-6 LJ has the same functional form in CHARMM and AMBER, and both use
 Lorentz–Berthelot mixing, the table transfers 1:1. **Use it with AMBER** (`amber14`, `amber19`,
-`amber99sb` are all verified). CHARMM36 currently refuses to merge — its 1-4 scaling factors
+`amber99sb` are all verified). CHARMM36 currently refuses to merge because its 1-4 scaling factors
 differ from the generated metal XML.
 
 ### 🔒 Restraints and the barostat
