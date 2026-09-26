@@ -186,7 +186,7 @@ Every parameter is a command-line flag — nothing needs editing inside the scri
 4. **Solvation** — explicit `boxVectors`, not `padding`. Padding would pick an arbitrary box and
    tear the lattice.
 
-### ⚛️ Force field for the metal
+### ⚛️ Force field for metals
 
 INTERFACE fcc metals are **neutral, 12-6 Lennard-Jones only** — no charges, no bonded terms
 (Heinz, Vaia, Farmer & Naik, *J. Phys. Chem. C* **2008**, *112*, 17281). Values are read
