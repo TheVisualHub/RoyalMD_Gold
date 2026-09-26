@@ -251,34 +251,9 @@ moving the surface away from the spacing the INTERFACE parameters are defined fo
 **Human carbonic anhydrase II** (PDB **[3KS3](https://www.rcsb.org/structure/3KS3)**, X-ray at
 **0.90 Å** — one of the highest-resolution protein structures available). A single 257-residue
 chain dominated by a large, twisted **antiparallel β-sheet** that packs into a rigid, compact
-fold, with only short helices around the edges.
-
-### ⚡ The Zn²⁺ active site
-
-The catalytic zinc sits at the bottom of a **~15 Å deep conical cleft** that opens to solvent,
-held by three histidines:
-
-```
-LINK   NE2 HIS  94  --- ZN 262      (2.03 A)
-LINK   NE2 HIS  96  --- ZN 262      (2.04 A)
-LINK   ND1 HIS 119  --- ZN 262      (2.02 A)
-```
-
-The fourth coordination site holds a water/hydroxide — the catalytic nucleophile that attacks
-CO₂, giving one of the fastest turnover numbers in biology (~10⁶ s⁻¹).
-
-Two consequences for surface modeling:
-
-- **Orientation is everything.** Land the funnel face-down on the metal and the enzyme is dead;
-  face-up and it stays accessible. This is exactly what the principal-axis + pocket-detection
-  alignment is for, and it makes this a real test of the pipeline rather than a trivial one.
-- **The zinc is non-bonded here.** `amber14` treats Zn²⁺ as a simple charged LJ sphere — the
-  three His–Zn bonds are *not* bonded terms, so the coordination is maintained only
-  electrostatically. Fine on a 10 ns timescale; for long production runs check the His–Zn
-  distances, or move to a bonded/ZAFF zinc model.
-
-> The structure also contains one **glycerol** (cryoprotectant) and 481 crystallographic waters.
-> For the tutorial, both are removed by the default `--strip-residues`.
+fold, with only short helices around the edges. It also carries one Zn²⁺ ion, which is kept for the
+tutorial and treated purely electrostatically (via a non-bonded model), plus one glycerol
+and 481 crystallographic waters. The latter two are removed by the default `--strip-residues`.
 
 ## 🔮 Output
 
