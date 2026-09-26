@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "RoyalMD Gold Edition"
+abstract: >-
+  A lightweight OpenMM pipeline for protein-metal interface molecular dynamics.
+  Builds an fcc metal slab from the INTERFACE model database, orients and
+  immobilizes a protein on it, solvates with box vectors locked to the metal
+  lattice, and runs minimization, multi-step equilibration and production with
+  layer-selective restraints on the surface.
+type: software
+version: "1.6p"
+date-released: 2026-09-19
+license: MIT
+authors:
+  - family-names: Novikov
+    given-names: Gleb
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # <-- add yours if you have one
+repository-code: "https://github.com/TheVisualHub/RoyalMD_Gold"   # <-- set to the real URL
+keywords:
+  - molecular dynamics
+  - OpenMM
+  - protein-metal interface
+  - enzyme immobilization
+  - gold surface
+  - INTERFACE force field
+references:
+  - type: article
+    title: >-
+      Accurate Simulation of Surfaces and Interfaces of Face-Centered Cubic
+      Metals Using 12-6 and 9-6 Lennard-Jones Potentials
+    authors:
+      - family-names: Heinz
+        given-names: Hendrik
+      - family-names: Vaia
+        given-names: Richard A.
+      - family-names: Farmer
+        given-names: Barry L.
+      - family-names: Naik
+        given-names: Rajesh R.
+    journal: "The Journal of Physical Chemistry C"
+    volume: 112
+    start: 17281
+    year: 2008
+    doi: "10.1021/jp801931d"
+  - type: article
+    title: >-
+      OpenMM 7: Rapid development of high performance algorithms for molecular
+      dynamics
+    authors:
+      - family-names: Eastman
+        given-names: Peter
+      - name: "and co-workers"
+    journal: "PLOS Computational Biology"
+    volume: 13
+    year: 2017
+    doi: "10.1371/journal.pcbi.1005659"
