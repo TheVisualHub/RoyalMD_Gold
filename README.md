@@ -7,19 +7,23 @@
 python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ./INTERFACE_FF_1_5
 ```
-This builds an **Au{111}** surface, places the protein on it, and runs the whole system with the
-metal **harmonically restrained** through minimization, heating and production — following the
-official AMBER tutorial:
+This builds a gold surface, places the protein on top of it, and then runs the simulation. The metal surface is harmonically restrained during minimization, heating, and production, following the official AMBER tutorial:
 [Setting Up A Protein System at the FCC Metal Surface](https://ambermd.org/tutorials/advanced/tutorial27/pro_metal.php).
 
-The metal itself is described by the **INTERFACE force field**
+The metal is modeled using the INTERFACE force field:
 ([INTERFACE-MD, v1.5](https://bionanostructures.com/interface-md/) · [Heinz *et al.*, *J. Phys.
-Chem. C* **2008**, *112*, 17281](https://doi.org/10.1021/jp801931d)) — neutral fcc metals with
-12-6 Lennard-Jones parameters. Grab it once and point `--interface-root` at it:
+Chem. C* **2008**, *112*, 17281](https://doi.org/10.1021/jp801931d)). It provides parameters for neutral fcc metals using 12-6 Lennard-Jones potentials. 
+Download the force-field files once, then point `--interface-root` to the directory where you saved them:
 
 ```bash
 curl -O https://bionanostructures.com/wp-content/uploads/2016/02/interface_ff_1_5.zip
 unzip interface_ff_1_5.zip
+```
+
+For a complete list of command-line options:
+
+```bash
+python ./RoyalMD_Gold.py --help
 ```
 
 ## 🔭 Overview
