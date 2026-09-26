@@ -190,14 +190,18 @@ Every parameter is a command-line flag — nothing needs editing inside the scri
 
 INTERFACE fcc metals are **neutral, 12-6 Lennard-Jones only** — no charges, no bonded terms
 (Heinz, Vaia, Farmer & Naik, *J. Phys. Chem. C* **2008**, *112*, 17281). Values are read
-straight from the package and converted to OpenMM units; nothing is refitted:
+straight from the package and converted to OpenMM units:
 
-| Metal | ε (kcal/mol) | Rmin/2 (Å) | Metal | ε (kcal/mol) | Rmin/2 (Å) |
-|---|---|---|---|---|---|
-| Ag | 4.56 | 1.4775 | Ni | 5.65 | 1.2760 |
-| Al | 4.02 | 1.4625 | Pb | 2.93 | 1.7825 |
-| Au | 5.29 | 1.4755 | Pd | 6.15 | 1.4095 |
-| Cu | 4.72 | 1.3080 | Pt | 7.80 | 1.4225 |
+| Metal | ε (kcal/mol) | Rmin/2 (Å) |
+|---|---|---|
+| Ag | 4.56 | 1.4775 |
+| Al | 4.02 | 1.4625 |
+| Au | 5.29 | 1.4755 |
+| Cu | 4.72 | 1.3080 |
+| Ni | 5.65 | 1.2760 |
+| Pb | 2.93 | 1.7825 |
+| Pd | 6.15 | 1.4095 |
+| Pt | 7.80 | 1.4225 |
 
 Because a 12-6 LJ has the same functional form in CHARMM and AMBER, and both use
 Lorentz–Berthelot mixing, the table transfers 1:1. **Use it with AMBER** (`amber14`, `amber19`,
