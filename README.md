@@ -38,6 +38,12 @@ Original code & test: **Gleb Novikov**
 
 Technical support: **Claude Opus**
 
+## 🌟 How to cite
+
+If you use **RoyalMD Gold Edition** in your projects, please cite it via the **Cite this repository**
+(GitHub reads [CITATION.cff](CITATION.cff)), and cite the **INTERFACE force field**
+it depends on: Heinz, Vaia, Farmer & Naik, *J. Phys. Chem. C* **2008**, *112*, 17281.
+
 
 ## ✨ Features
 - Automatic **PDB fixing** (missing atoms, residues, protonation via `pdbfixer`)
