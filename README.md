@@ -247,7 +247,7 @@ moving the surface away from the spacing the INTERFACE parameters are defined fo
         'amber99sb': 'amber99sb.xml', # with TIP3P water
         'amber99sbildn': 'amber99sbildn.xml', # with TIP3P water
         'amber03': 'amber03.xml', # with TIP3P water
-        'charmm36': 'charmm36.xml' # with "water" model | does not work with INTERFACE
+        'charmm36': 'charmm36.xml' # with "water" model | ⚠️ does not work with --metalsurf
     }
 ```
 
