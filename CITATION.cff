@@ -14,8 +14,7 @@ license: MIT
 authors:
   - family-names: Novikov
     given-names: Gleb
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # <-- add yours if you have one
-repository-code: "https://github.com/TheVisualHub/RoyalMD_Gold"   # <-- set to the real URL
+repository-code: "https://github.com/TheVisualHub/RoyalMD_Gold" 
 keywords:
   - molecular dynamics
   - OpenMM
