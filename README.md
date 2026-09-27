@@ -4,7 +4,7 @@
 
 ## 💫 QUICK LAUNCH
 ```bash
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ./INTERFACE_FF_1_5
 ```
 This builds a gold surface, places the protein on top of it, and then runs the simulation. The metal surface is harmonically restrained during minimization, heating, and production, following the official AMBER tutorial:
@@ -23,7 +23,7 @@ unzip interface_ff_1_5.zip
 For a complete list of command-line options:
 
 ```bash
-python ./RoyalMD_Gold.py --help
+python ./goldMD.py --help
 ```
 
 ## 🔭 Overview
@@ -89,26 +89,26 @@ Only `INTERFACE_FF_1_5/MODEL_DATABASE/METALS/` is needed. If it lives elsewhere,
 
 ```bash
 # Carbonic anhydrase II on gold {111} — defaults, the whole slab restrained:
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf
 
 # Let the top 2 metal layers breathe from NPT onwards (recommended):
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal-relax-top 2
 
 # Silver instead of gold, {100} facet, thicker slab:
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal ag --metal-facet 100 --metal-cells-z 3
 
 # Platinum, closer start, 50 ns production:
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --metal pt --metal-separation 2.5 --production-time 50000
 
 # INTERFACE package somewhere else:
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb --metalsurf \
        --interface-root ~/software/INTERFACE_FF_1_5
 
 # NO metal at all — plain protein MD in a dodecahedron:
-python ./RoyalMD_Gold.py ./test_systems/CarbonicAnhydraseII.pdb
+python ./goldMD.py ./test_systems/CarbonicAnhydraseII.pdb
 ```
 
 ## ⚙️ Configuration
